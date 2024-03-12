@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import LineChart from '../../charts/LineChart01'
 import EditMenu from '../../components/DropdownEditMenu'
-import Icon from '../../images/icon-02.svg'
+import Icon from '../../images/humidity.png'
 
 // Import utilities
 import { hexToRGB, tailwindConfig } from '../../utils/Utils'

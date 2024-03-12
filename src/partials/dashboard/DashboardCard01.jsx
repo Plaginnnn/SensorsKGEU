@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import LineChart from '../../charts/LineChart01'
 import EditMenu from '../../components/DropdownEditMenu'
-import Icon from '../../images/icon-01.svg'
+import Icon from '../../images/temperature.png'
 
 // Import utilities
 import { hexToRGB, tailwindConfig } from '../../utils/Utils'
@@ -36,13 +36,41 @@ function DashboardCard01() {
 			'11-01-2022',
 			'12-01-2022',
 			'01-01-2023',
+			'02-01-2023',
+			'03-01-2023',
+			'04-01-2023',
+			'05-01-2023',
+			'06-01-2023',
+			'07-01-2023',
+			'08-01-2023',
+			'09-01-2023',
+			'10-01-2023',
+			'11-01-2023',
+			'12-01-2023',
+			'01-01-2024',
+			'02-01-2024',
+			'03-01-2024',
+			'04-01-2024',
+			'05-01-2024',
+			'06-01-2024',
+			'07-01-2024',
+			'08-01-2024',
+			'09-01-2024',
+			'10-01-2024',
+			'11-01-2024',
+			'12-01-2024',
+			'01-01-2025',
+			'01-02-2025',
 		],
+
 		datasets: [
 			// Indigo line
 			{
 				data: [
 					732, 610, 610, 504, 504, 504, 349, 349, 504, 342, 504, 610, 391, 192,
-					154, 273, 191, 191, 126, 263, 349, 252, 423, 622, 470, 532,
+					154, 273, 191, 191, 126, 263, 349, 252, 423, 622, 470, 532, 732, 610,
+					610, 504, 504, 504, 349, 349, 504, 342, 504, 610, 391, 192, 154, 273,
+					191, 191, 126, 263, 349, 252, 423, 252,
 				],
 				fill: true,
 				backgroundColor: `rgba(${hexToRGB(
@@ -90,7 +118,7 @@ function DashboardCard01() {
 			<div className='px-5 pt-5'>
 				<header className='flex justify-between items-start mb-2'>
 					{/* Icon */}
-					<img src={Icon} width='32' height='32' alt='Icon 01' />
+					<img src={Icon} width='32' height='32' alt='Icon 01' color='white' />
 					{/* Menu button */}
 					<EditMenu align='right' className='relative inline-flex'>
 						<li>

@@ -78,7 +78,7 @@ function DropdownFilter({ align }) {
 							<label className='flex items-center'>
 								<input type='checkbox' className='form-checkbox' />
 								<span className='text-sm font-medium ml-2'>
-									Real Time Value
+									График реального времени
 								</span>
 							</label>
 						</li>

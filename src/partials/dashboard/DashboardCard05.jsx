@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import RealtimeChart from '../../charts/RealtimeChart'
-import Tooltip from '../../components/Tooltip'
 
 // Import utilities
 import { hexToRGB, tailwindConfig } from '../../utils/Utils'
@@ -95,21 +94,8 @@ function DashboardCard05() {
 		<div className='flex flex-col col-span-full sm:col-span-6 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700'>
 			<header className='px-5 py-4 border-b border-slate-100 dark:border-slate-700 flex items-center'>
 				<h2 className='font-semibold text-slate-800 dark:text-slate-100'>
-					Real Time Value
+					График реального времени
 				</h2>
-				<Tooltip className='ml-2'>
-					<div className='text-xs text-center whitespace-nowrap'>
-						Built with{' '}
-						<a
-							className='underline'
-							href='https://www.chartjs.org/'
-							target='_blank'
-							rel='noreferrer'
-						>
-							Chart.js
-						</a>
-					</div>
-				</Tooltip>
 			</header>
 			{/* Chart built with Chart.js 3 */}
 			{/* Change the height attribute to adjust the chart height */}

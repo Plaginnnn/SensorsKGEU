@@ -1,9 +1,6 @@
 import React from 'react'
 import BarChart from '../../charts/BarChart01'
 
-// Import utilities
-import { tailwindConfig } from '../../utils/Utils'
-
 function DashboardCard04() {
 	const chartData = {
 		labels: [
@@ -18,18 +15,18 @@ function DashboardCard04() {
 			// Light blue bars
 			{
 				label: 'Максимальная',
-				data: [800, 1600, 900, 1300, 1950, 1700],
-				backgroundColor: tailwindConfig().theme.colors.blue[400],
-				hoverBackgroundColor: tailwindConfig().theme.colors.blue[500],
+				data: [49, 26, 53, 48, 52, 48, 100],
+				backgroundColor: '#90CDF4', // Assuming you provide the color directly here
+				hoverBackgroundColor: '#63B3ED', // Assuming you provide the color directly here
 				barPercentage: 0.66,
 				categoryPercentage: 0.66,
 			},
 			// Blue bars
 			{
 				label: 'Минималальная',
-				data: [4900, 2600, 5350, 4800, 5200, 4800],
-				backgroundColor: tailwindConfig().theme.colors.indigo[500],
-				hoverBackgroundColor: tailwindConfig().theme.colors.indigo[600],
+				data: [49, 26, 53, 48, 52, 48],
+				backgroundColor: '#4F46E5', // Assuming you provide the color directly here
+				hoverBackgroundColor: '#4338CA', // Assuming you provide the color directly here
 				barPercentage: 0.66,
 				categoryPercentage: 0.66,
 			},
