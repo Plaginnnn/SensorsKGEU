@@ -1,19 +1,23 @@
 import React, { useState } from 'react'
 
 import Datepicker from '../components/Datepicker'
-import FilterButton from '../components/DropdownFilter'
 import Header from '../partials/Header'
 import Sidebar from '../partials/Sidebar'
 
-import DashboardCard01 from '../partials/dashboard/DashboardCard01'
-import DashboardCard02 from '../partials/dashboard/DashboardCard02'
-import DashboardCard03 from '../partials/dashboard/DashboardCard03'
+import DashboardInterval from '../components/LineGraph/index.jsx'
+import MapComponent from '../components/OpenStreetMap/OpenStreetMap.jsx'
 import DashboardCard04 from '../partials/dashboard/DashboardCard04'
 import DashboardCard05 from '../partials/dashboard/DashboardCard05'
 import DashboardCard07 from '../partials/dashboard/DashboardCard07'
 
 function Dashboard() {
 	const [sidebarOpen, setSidebarOpen] = useState(false)
+	const coordinates = [
+		[55.7887, 49.1221], // Казань
+		[55.7887, 49.1], // Казань
+		[55.2, 49.1221], /// Казань
+		// Добавьте здесь свои координаты
+	]
 
 	return (
 		<div className='flex h-screen overflow-hidden'>
@@ -36,29 +40,29 @@ function Dashboard() {
 							{/* Right: Actions */}
 							<div className='grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2'>
 								{/* Filter button */}
-								<FilterButton />
-								{/* Datepicker built with flatpickr */}
-								<Datepicker />
-								{/* Add view button */}
 							</div>
 						</div>
+						<DashboardCard07 />
+						<MapComponent coordinates={coordinates} className='my-6' />
 
 						{/* Cards */}
 						<div className='grid grid-cols-12 gap-6'>
+							{/* Table (Top Channels) */}
+
 							{/* Line chart (Acme Plus) */}
-							<DashboardCard01 />
+							{/* <DashboardCard01 /> */}
 							{/* Line chart (Acme Advanced) */}
-							<DashboardCard02 />
+							{/* <DashboardCard02 /> */}
 							{/* Line chart (Acme Professional) */}
-							<DashboardCard03 />
-							{/* Bar chart (Direct vs Indirect) */}
-							<DashboardCard04 />
+							{/* <DashboardCard03 /> */}
 							{/* Line chart (Real Time Value) */}
 							<DashboardCard05 />
+							{/* Bar chart (Direct vs Indirect) */}
+							<DashboardCard04 />
+
 							{/* Doughnut chart (Top Countries) */}
 							{/* <DashboardCard06 /> */}
-							{/* Table (Top Channels) */}
-							<DashboardCard07 />
+
 							{/* Line chart (Sales Over Time) */}
 							{/* <DashboardCard08 /> */}
 							{/* Stacked bar chart (Sales VS Refunds) */}
@@ -72,6 +76,11 @@ function Dashboard() {
 							{/* Card (Income/Expenses) */}
 							{/* <DashboardCard13 /> */}
 						</div>
+						{/* <FilterButton /> */}
+						{/* Datepicker built with flatpickr */}
+						<Datepicker />
+						{/* Add view button */}
+						<DashboardInterval />
 					</div>
 				</main>
 			</div>
