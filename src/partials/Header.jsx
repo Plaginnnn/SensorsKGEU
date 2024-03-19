@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 
-import Help from '../components/DropdownHelp'
 import Notifications from '../components/DropdownNotifications'
 import UserMenu from '../components/DropdownProfile'
-import SearchModal from '../components/ModalSearch'
+// import SearchModal from '../components/ModalSearch'
 import ThemeToggle from '../components/ThemeToggle'
 
 function Header({ sidebarOpen, setSidebarOpen }) {
@@ -41,7 +40,7 @@ function Header({ sidebarOpen, setSidebarOpen }) {
 					{/* Header: Right side */}
 					<div className='flex items-center space-x-3'>
 						<div>
-							<button
+							{/* <button
 								className={`w-8 h-8 flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600/80 rounded-full ml-3 ${
 									searchModalOpen && 'bg-slate-200'
 								}`}
@@ -66,16 +65,16 @@ function Header({ sidebarOpen, setSidebarOpen }) {
 										d='M15.707 14.293L13.314 11.9a8.019 8.019 0 01-1.414 1.414l2.393 2.393a.997.997 0 001.414 0 .999.999 0 000-1.414z'
 									/>
 								</svg>
-							</button>
-							<SearchModal
+							</button> */}
+							{/* <SearchModal
 								id='search-modal'
 								searchId='search'
 								modalOpen={searchModalOpen}
 								setModalOpen={setSearchModalOpen}
-							/>
+							/> */}
 						</div>
 						<Notifications align='right' />
-						<Help align='right' />
+
 						<ThemeToggle />
 						{/*  Divider */}
 						<hr className='w-px h-6 bg-slate-200 dark:bg-slate-700 border-none' />

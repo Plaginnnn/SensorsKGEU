@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Transition from '../utils/Transition';
+import React, { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
+import Transition from '../utils/Transition'
 
 function ModalSearch({
   id,

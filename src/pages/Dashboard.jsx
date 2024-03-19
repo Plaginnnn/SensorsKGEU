@@ -1,18 +1,22 @@
 import React, { useState } from 'react'
 
+import { useDataProvider } from '../utils/DataProvider.jsx'
+
 import Datepicker from '../components/Datepicker'
 import Header from '../partials/Header'
 import Sidebar from '../partials/Sidebar'
 
+import ButtonComponent from '../components/Buttons.jsx'
 import DashboardInterval from '../components/LineGraph/index.jsx'
 import MapComponent from '../components/OpenStreetMap/OpenStreetMap.jsx'
 import DashboardCard04 from '../partials/dashboard/DashboardCard04'
 import DashboardCard05 from '../partials/dashboard/DashboardCard05'
 import DashboardCard07 from '../partials/dashboard/DashboardCard07'
-
 function Dashboard() {
+	const { coordinates, updatCoordinates } = useDataProvider()
+
 	const [sidebarOpen, setSidebarOpen] = useState(false)
-	const coordinates = [
+	const coordinatesTEST = [
 		[55.7887, 49.1221], // Казань
 		[55.7887, 49.1], // Казань
 		[55.2, 49.1221], /// Казань
@@ -44,6 +48,7 @@ function Dashboard() {
 						</div>
 						<DashboardCard07 />
 						<MapComponent coordinates={coordinates} className='my-6' />
+						<ButtonComponent />
 
 						{/* Cards */}
 						<div className='grid grid-cols-12 gap-6'>

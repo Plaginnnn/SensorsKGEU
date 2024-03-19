@@ -9,9 +9,11 @@
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.7",
+    "axios": "^1.6.8",
     "chart.js": "^4.4.1",
     "chartjs-adapter-moment": "^1.0.1",
     "chartjs-plugin-zoom": "^2.0.1",
+    "flatpickr": "^4.6.13",
     "leaflet": "^1.9.4",
     "moment": "^2.29.4",
     "ol": "^4.6.5",

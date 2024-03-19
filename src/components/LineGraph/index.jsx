@@ -1,5 +1,6 @@
 // Импорт необходимых библиотек и стилей
 import { useEffect, useRef, useState } from 'react'
+import { useDataProvider } from './../../utils/DataProvider'
 import styles from './LineGraph.module.css'
 
 import {
@@ -39,6 +40,7 @@ const getAspectRatio = () => {
 	}
 	return settings
 }
+
 // Настройки графика
 const options = {
 	responsive: true,
@@ -100,9 +102,13 @@ const options = {
 
 // Компонент LineGraph
 export const LineGraph = () => {
+	const { data, type } = useDataProvider()
+	const [apiUrl, setApiUrl] = useState()
+
+	useEffect(() => {
+		console.log(type)
+	}, [type])
 	// URL для получения данных с сервера (в дальнейшем будем динамически менять используя option)
-	const apiUrl =
-		'https://eggs.2d.su/view.php?egg_id=000D6F0004CD6CE0&start_date=2023-12-21&start_time=13:44:00&end_date=2023-12-21&end_time=22:45:00'
 
 	// Состояния для хранения данных графика
 	const [labels, setLabels] = useState([])
@@ -112,7 +118,9 @@ export const LineGraph = () => {
 
 	// Запрос данных с сервера при монтировании компонента
 	useEffect(() => {
-		fetch(apiUrl)
+		fetch(
+			`https://eggs.2d.su/view.php?egg_id=${data}&start_date=2023-12-21&start_time=13:44:00&end_date=2023-12-21&end_time=22:45:00`
+		)
 			.then(response => response.json())
 			.then(data => {
 				// Обновление состояний данными с сервера
@@ -124,7 +132,7 @@ export const LineGraph = () => {
 			.catch(error =>
 				console.error('Ошибка при выполнении fetch запроса:', error)
 			)
-	}, [])
+	}, [data])
 
 	// Конфигурация данных для графика температуры
 	const data1 = {
@@ -173,18 +181,23 @@ export const LineGraph = () => {
 	const canvasRef2 = useRef(null)
 	const canvasRef3 = useRef(null)
 
+	let chartData
+	if (type === 'temperature') {
+		chartData = data1
+	} else if (type === 'humidity') {
+		chartData = data2
+	} else if (type === 'angle') {
+		chartData = data3
+	} else {
+		// Пустой график по умолчанию
+		chartData = data1
+	}
 	// Рендеринг компонента
 
 	return (
 		<div className={`${styles.main} `}>
 			<div>
-				<Line ref={canvasRef1} options={options} data={data1} />
-			</div>
-			<div>
-				<Line ref={canvasRef2} options={options} data={data2} />
-			</div>
-			<div>
-				<Line ref={canvasRef3} options={options} data={data3} />
+				<Line options={options} data={chartData} />
 			</div>
 		</div>
 	)

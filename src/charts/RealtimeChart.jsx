@@ -2,14 +2,14 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useThemeProvider } from '../utils/ThemeContext'
 
 import {
-  Chart,
-  Filler,
-  LineController,
-  LineElement,
-  LinearScale,
-  PointElement,
-  TimeScale,
-  Tooltip,
+	Chart,
+	Filler,
+	LineController,
+	LineElement,
+	LinearScale,
+	PointElement,
+	TimeScale,
+	Tooltip,
 } from 'chart.js'
 import 'chartjs-adapter-moment'
 import { chartColors } from './ChartjsConfig'
