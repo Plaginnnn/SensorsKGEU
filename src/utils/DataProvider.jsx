@@ -12,7 +12,7 @@ const DataContext = createContext({
 export default function DataProvider({ children }) {
 	const [data, setData] = useState('')
 	const [coordinates, setCoordinates] = useState([])
-	const [type, setType] = useState('')
+	const [type, setType] = useState('temperature')
 
 	const updateData = newData => {
 		setData(newData)

@@ -34,7 +34,7 @@ function Dashboard() {
 				<Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
 				<main>
-					<div className='px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto'>
+					<div className='px-4 sm:px-6 lg:px-8 py-0 w-full max-w-9xl mx-auto'>
 						{/* Welcome banner */}
 
 						{/* Dashboard actions */}
@@ -51,7 +51,7 @@ function Dashboard() {
 						<ButtonComponent />
 
 						{/* Cards */}
-						<div className='grid grid-cols-12 gap-6'>
+						<div className='grid grid-cols-12 gap-6 mb-10'>
 							{/* Table (Top Channels) */}
 
 							{/* Line chart (Acme Plus) */}

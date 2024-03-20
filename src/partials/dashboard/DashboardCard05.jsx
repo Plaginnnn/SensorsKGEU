@@ -8,40 +8,44 @@ function DashboardCard05() {
 	const maxDataPoints = 10 // Максимальное количество точек данных
 
 	useEffect(() => {
-		const fetchData = () => {
-			const randomTemp = (Math.random() * (80 - 30) + 30).toFixed(2)
+		const fetchData = async () => {
+			try {
+				const response = await fetch(
+					'https://eggs.2d.su/egg_last_info.php?egg_id=000D6F0004CD6CE0'
+				)
+				const apiData = await response.json()
 
-			const now = new Date()
+				// Обновляем данные
+				setData(prevData => {
+					const updatedData = [
+						apiData.temp,
+						...prevData.slice(0, maxDataPoints - 1),
+					]
+					return updatedData
+				})
 
-			// Генерируем уникальное время с миллисекундами
-			const randomTime = now.toLocaleTimeString('en-US', {
-				hour12: true,
-				hour: '2-digit',
-				minute: '2-digit',
-				second: '2-digit',
-				fractionalSecondDigits: 3,
-			})
-
-			// Обновляем данные
-			setData(prevData => {
-				const updatedData = [
-					randomTemp,
-					...prevData.slice(0, maxDataPoints - 1),
-				]
-				return updatedData
-			})
-
-			// Обновляем метки
-			setLabels(prevLabels => {
-				const updatedLabels = [
-					randomTime,
-					...prevLabels.slice(0, maxDataPoints - 1),
-				]
-				return updatedLabels
-			})
+				// Обновляем метки
+				setLabels(prevLabels => {
+					const now = new Date()
+					const randomTime = now.toLocaleTimeString('en-US', {
+						hour12: true,
+						hour: '2-digit',
+						minute: '2-digit',
+						second: '2-digit',
+						fractionalSecondDigits: 3,
+					})
+					const updatedLabels = [
+						randomTime,
+						...prevLabels.slice(0, maxDataPoints - 1),
+					]
+					return updatedLabels
+				})
+			} catch (error) {
+				console.error('Error fetching data:', error)
+			}
 		}
 
-		const interval = setInterval(fetchData, 1000)
+		const interval = setInterval(fetchData, 14000)
 		return () => clearInterval(interval)
 	}, [])
 

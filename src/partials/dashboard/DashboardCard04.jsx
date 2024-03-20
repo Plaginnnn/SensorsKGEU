@@ -4,18 +4,24 @@ import BarChart from '../../charts/BarChart01'
 function DashboardCard04() {
 	const chartData = {
 		labels: [
-			'12-01-2020',
 			'01-01-2021',
 			'02-01-2021',
 			'03-01-2021',
 			'04-01-2021',
 			'05-01-2021',
+			'06-01-2021',
+			'07-01-2021',
+			'08-01-2021',
+			'09-01-2021',
+			'10-01-2021',
+			'11-01-2021',
+			'12-01-2021',
 		],
 		datasets: [
 			// Light blue bars
 			{
 				label: 'Максимальная',
-				data: [49, 26, 53, 48, 52, 48, 100],
+				data: [49, 26, 53, 48, 52, 48, 100, 120, 48, 100, 120, 48],
 				backgroundColor: '#90CDF4', // Assuming you provide the color directly here
 				hoverBackgroundColor: '#63B3ED', // Assuming you provide the color directly here
 				barPercentage: 0.66,
@@ -24,7 +30,7 @@ function DashboardCard04() {
 			// Blue bars
 			{
 				label: 'Минималальная',
-				data: [49, 26, 53, 48, 52, 48],
+				data: [49, 26, 53, 48, 52, 48, 100, 120, 48, 100, 120, 48],
 				backgroundColor: '#4F46E5', // Assuming you provide the color directly here
 				hoverBackgroundColor: '#4338CA', // Assuming you provide the color directly here
 				barPercentage: 0.66,

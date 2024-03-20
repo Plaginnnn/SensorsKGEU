@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDataProvider } from '../utils/DataProvider'
 const ButtonComponent = () => {
-	const [activeButton, setActiveButton] = useState(null)
+	const [activeButton, setActiveButton] = useState('temperature')
 	const { updateType } = useDataProvider()
 	const handleButtonClick = type => {
 		updateType(type)

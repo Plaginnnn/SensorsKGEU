@@ -58,8 +58,8 @@ function RealtimeChart({ data, width, height }) {
 						border: {
 							display: false,
 						},
-						suggestedMin: 30,
-						suggestedMax: 80,
+						suggestedMin: 0.1,
+						suggestedMax: 0.1,
 						ticks: {
 							maxTicksLimit: 5,
 							callback: value => value,

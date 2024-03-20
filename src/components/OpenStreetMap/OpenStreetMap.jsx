@@ -1,6 +1,7 @@
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import React, { useEffect, useRef } from 'react'
+import './style.css'
 
 const MapComponent = ({ coordinates }) => {
 	const mapRef = useRef(null)
@@ -9,7 +10,7 @@ const MapComponent = ({ coordinates }) => {
 		const map = L.map(mapRef.current).setView([55.7887, 49.1221], 6)
 
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			attribution: '',
+			attribution: '', // Удалите строку с атрибуцией
 			maxZoom: 18,
 		}).addTo(map)
 
@@ -36,7 +37,7 @@ const MapComponent = ({ coordinates }) => {
 		}
 	}, [coordinates])
 
-	return <div ref={mapRef} style={{ height: ' 500px', zIndex: 0 }} />
+	return <div ref={mapRef} style={{ height: ' 350px', zIndex: 0 }} />
 }
 
 export default MapComponent
